@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>線型変換で点を移動させる</title>
+    <title>Product_1</title>
+    <!-- jQuery -->
+    <script type = "text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- 矢印 -->
+    <script src="https://frogcat.github.io/canvas-arrow/canvas-arrow.js"></script>
+    <link rel = "stylesheet" href = "./src/stylesheet.css">
+  </head>
+  <body>
+    <div class = "heading">
+      <b id = "title" class = "text">線型変換ビジュアライザーⅡ</b>
+      <p id = "mode" class = "text">点移動（線型補間モード）</p>
+    </div>
+    <canvas id = "field" width = "400" height = "400"></canvas>
+    <script src = "./src/script.js"></script>
+    <div class = "config">
+      <button id = "Shiftbutton" class = "inputs">Shift</button>
+      <div id = "inputArea" class = "inputs">
+        <input id = "elem00" class = "element" type = "text" maxlength = "5">
+        <input id = "elem01" class = "element" type = "text" maxlength = "5"><br>
+        <input id = "elem10" class = "element" type = "text" maxlength = "5">
+        <input id = "elem11" class = "element" type = "text" maxlength = "5">
+      </div>
+    </div>
+  </body>
+</html>

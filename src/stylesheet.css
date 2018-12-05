@@ -1,0 +1,42 @@
+canvas{
+  background-color: "#eee";
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.heading{
+  text-align: center;
+  margin: 5px;
+}
+
+.text{
+  font-size: 20px;
+  margin: 0; /* このようにしないと勝手にmarginは20ですね～～とかされちゃう */
+}
+
+.config{
+  text-align: center;
+}
+
+.inputs{
+  display: inline-block;
+}
+
+#Shiftbutton{
+  height: 50px;
+  width: 70px;
+  font-size: 20px;
+  background-color: #99CCFF;
+  border-radius: 5px;
+}
+
+#Shiftbutton:hover{
+  background-color: #33CCFF;
+}
+
+.element{
+  height: 30px;
+  width: 40px;
+  font-size: 20px;
+}
