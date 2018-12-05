@@ -10,13 +10,12 @@
     <script src="https://frogcat.github.io/canvas-arrow/canvas-arrow.js"></script>
     <link rel = "stylesheet" href = "./src/stylesheet.css">
   </head>
-  <body>
+  <body onload = "init()">
     <div class = "heading">
       <b id = "title" class = "text">線型変換ビジュアライザーⅡ</b>
       <p id = "mode" class = "text">点移動（線型補間モード）</p>
     </div>
     <canvas id = "field" width = "400" height = "400"></canvas>
-    <script src = "./src/script.js"></script>
     <div class = "config">
       <button id = "Shiftbutton" class = "inputs">Shift</button>
       <div id = "inputArea" class = "inputs">
@@ -26,5 +25,6 @@
         <input id = "elem11" class = "element" type = "text" maxlength = "5">
       </div>
     </div>
+    <script src = "./src/script.js"></script>
   </body>
 </html>
