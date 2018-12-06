@@ -18,10 +18,7 @@ function getctx(){
 
 // 画像のロード
 function loading(){
-  console.log(blank);
-  console.log('%s %d', "loading", 1);
   blank.src = "./images/blank.png";
-  console.log(blank);
   for(i = 0; i < 5; i++){
     var dot = new Image();
     dot.src = "./images/colordot_" + i + ".png";

@@ -18,4 +18,5 @@ function init(){
   // その場合は自然にResetされる、って感じかなぁ。
   // あっちのビジュアライザーもEnterボタンとモード明示やった方がいいかもしれない。
   drawTest();
+  drawTest();
 }
