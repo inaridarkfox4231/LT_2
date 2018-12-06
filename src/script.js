@@ -10,5 +10,6 @@ $.ajax({url: "./src/draw.js", dataType: "script", async: false});
 // 初期化。
 function init(){
   loading();
-  $('#Startbutton').focus(); // こうすればEnterキー押しても始まる、はず
+  // $('#Startbutton').focus(); // こうすればEnterキー押しても始まる、はず
+  // やめた。普通にEnterキーの機能にしたい。
 }
