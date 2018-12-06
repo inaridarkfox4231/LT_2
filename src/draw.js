@@ -1,5 +1,6 @@
 function drawTest(){
   var ctx = getctx();
+  console.log('%s %d', "draw", 2)
   ctx.drawImage(blank, 0, 0);
   ctx.beginPath();
   ctx.arrow(200, 400, 200, 0, [0, 1, -10, 1, -10, 5]);
