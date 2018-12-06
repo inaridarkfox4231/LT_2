@@ -1,3 +1,4 @@
+/* デフォルトのpaddingとmarginを解除するためのおまじない！！ */
 *{
   padding: 0;
   margin: 0;
@@ -17,7 +18,12 @@ canvas{
 
 .text{
   font-size: 20px;
-  margin: 0; /* このようにしないと勝手にmarginは20ですね～～とかされちゃう */
+  display: block; /* 縦に表示（noneで取り消す） */
+  margin: 0 auto; /* このようにしないと勝手にmarginは20ですね～～とかされちゃう */
+}
+
+#mode{
+  display: none; /* モード表示はクリックした後でいいよね・・ */
 }
 
 button{
@@ -38,6 +44,10 @@ button:hover{
   width: 70px;
 }
 
+#Enterbutton{
+  width: 70px;
+}
+
 .config{
   text-align: center;
   display: none; /* Enter押したときにshowで表示する */
@@ -55,4 +65,8 @@ button:hover{
   height: 30px;
   width: 40px;
   font-size: 20px;
+}
+
+#state{
+  color: blue; /* 移動しているときは赤で点滅、移動が終わったら黒にし、Enterで再び青に戻す。 */
 }

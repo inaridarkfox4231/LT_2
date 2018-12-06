@@ -9,6 +9,7 @@ $('#Shiftbutton').click(function(){
 $('#Startbutton').click(function(){
   drawTest();
   $(this).hide();
+  $('#mode').show();
   $('.config').show();
 })
 
