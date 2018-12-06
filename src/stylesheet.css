@@ -20,24 +20,35 @@ canvas{
   margin: 0; /* このようにしないと勝手にmarginは20ですね～～とかされちゃう */
 }
 
+button{
+  height: 50px;
+  font-size: 20px;
+  background-color: #99CCFF;
+  border-radius: 5px;
+}
+
+button:hover{
+  background-color: #33CCFF;
+}
+
+#Startbutton{
+  width: 140px;
+}
+#Shiftbutton{
+  width: 70px;
+}
+
 .config{
   text-align: center;
+  display: none; /* Enter押したときにshowで表示する */
 }
 
 .inputs{
   display: inline-block;
 }
 
-#Shiftbutton{
-  height: 50px;
-  width: 70px;
-  font-size: 20px;
-  background-color: #99CCFF;
-  border-radius: 5px;
-}
-
-#Shiftbutton:hover{
-  background-color: #33CCFF;
+.element.style{
+  padding-top: 30px;
 }
 
 .element{

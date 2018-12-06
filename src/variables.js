@@ -9,6 +9,8 @@ var blank = new Image();
 // 各種、色付きの点。
 var dots = new Array();
 
+// 4つの成分の配列elemを作る
+
 // contextの取得
 function getctx(){
   var canvas = $('canvas')[0];
