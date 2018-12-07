@@ -12,6 +12,4 @@ $(window).keydown(function(e){
   if(e.keyCode == K_SHIFT){ shiftKeyProcess(); } // シフトキー
 })
 
-// 計算に使うパラメータをいじる、モード表示の変更
-
 // そのうち、上下キーで入力マスを移動できるようにしたい

@@ -4,6 +4,7 @@
 function init(){
   drawInit();
   $('#Startbutton').hide();
+  $('#explain').hide();
   $('#mode').show();
   $('.config').show();
   state = WAIT;
@@ -23,9 +24,16 @@ function interPolation(count){
   // 1, 0, 0, 1とa, b, c, dの間のデータ補間
   var ctx = getctx();
   drawAxis(ctx);
-  tmp = count / 50;
-  if(count == 50){ tmp = 1; }
-  drawDots(ctx, 1 - tmp + tmp * elem[0], tmp * elem[1], tmp * elem[2], 1 - tmp + tmp * elem[3]);
+  if(mode == 0){
+    tmp = count / 50;
+    if(count == 50){ tmp = 1; }
+    drawDots(ctx, 1 - tmp + tmp * elem[0], tmp * elem[1], tmp * elem[2], 1 - tmp + tmp * elem[3]);
+  }else if(mode == 1){
+    var cosine = Math.cos((count * 1.8) * (Math.PI / 180));
+    var sine = Math.sin((count * 1.8) * (Math.PI / 180));
+    if(count == 50){ cosine = 0, sine = 1;}
+    drawDots(ctx, cosine + sine * elem[0], sine * elem[1], sine * elem[2], cosine + sine * elem[3]);
+  }
 }
 
 // 点の描画を繰り返す処理
