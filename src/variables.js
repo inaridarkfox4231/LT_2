@@ -29,6 +29,8 @@ var K_SHIFT = 16;
 
 // mode変数（0か1）
 var mode = 0;
+const NUM_OF_MODE = 2;
+var modenames = ["点移動（線型補間モード）", "点移動（円補間モード）"];
 
 // contextの取得
 function getctx(){

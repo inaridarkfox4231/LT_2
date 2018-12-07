@@ -21,10 +21,10 @@ function inputElem(){
 
 function interPolation(count){
   // 1, 0, 0, 1とa, b, c, dの間のデータ補間
-  tmp = count / 20;
-  if(count == 20){ tmp = 1; }
   var ctx = getctx();
   drawAxis(ctx);
+  tmp = count / 50;
+  if(count == 50){ tmp = 1; }
   drawDots(ctx, 1 - tmp + tmp * elem[0], tmp * elem[1], tmp * elem[2], 1 - tmp + tmp * elem[3]);
 }
 
@@ -32,8 +32,8 @@ function interPolation(count){
 function dotAnim(){
   count += 1;
   interPolation(count);
-  // console.log(count); // ここに本来の仕様を記述（countをもとに補間してdotを描く・・）
-  if(count == 20){
+  if(Math.floor(count / 5) % 2 == 1){ $('#state').hide(); }else{ $('#state').show(); } // 点滅処理
+  if(count == 50){
      clearInterval(timer);
      count = 0;
      $('#state').css("color", "black");
@@ -54,7 +54,7 @@ function startMove(){
   $('#state').css("color", "red");
   $('#state').text("移動中");
   $('.element').prop("disabled", true);
-  timer = setInterval(dotAnim, 250);
+  timer = setInterval(dotAnim, 100);
   state = MOVING;
 }
 // FINISHED→WAITの遷移処理
@@ -74,4 +74,11 @@ function enterKeyProcess(){
   if(state == TITLE){ init(); }
   if(state == WAIT){ startMove(); }
   if(state == FINISHED){ initState(); }
+}
+
+function shiftKeyProcess(){
+  if(state == WAIT){
+    mode = (mode + 1) % NUM_OF_MODE;  // こうすればモードを増やしてもコードいじらなくてよくなる
+    $('#mode').text(modenames[mode]);
+  }
 }

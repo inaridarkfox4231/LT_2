@@ -4,13 +4,14 @@
 $('#Startbutton').click(function(){ init(); })
 // エンターキーの仕様
 $('#Enterbutton').click(function(){ enterKeyProcess(); })
+// シフトキーの仕様
+$('#Shiftbutton').click(function(){ shiftKeyProcess(); })
 
-// Enterキーの仕様
 $(window).keydown(function(e){
-  if(e.keyCode == K_ENTER){ enterKeyProcess(); }
+  if(e.keyCode == K_ENTER){ enterKeyProcess(); } // エンターキー
+  if(e.keyCode == K_SHIFT){ shiftKeyProcess(); } // シフトキー
 })
 
-// シフトキーの仕様
-// 計算に使うパラメータをいじるだけ
+// 計算に使うパラメータをいじる、モード表示の変更
 
 // そのうち、上下キーで入力マスを移動できるようにしたい

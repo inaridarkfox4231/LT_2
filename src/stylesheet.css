@@ -17,6 +17,7 @@ canvas{
 }
 
 .text{
+  text-align: center;
   font-size: 20px;
   display: block; /* 縦に表示（noneで取り消す） */
   margin: 0 auto; /* このようにしないと勝手にmarginは20ですね～～とかされちゃう */
@@ -63,7 +64,7 @@ button:hover{
 
 .element{
   height: 30px;
-  width: 40px;
+  width: 50px;
   font-size: 20px;
 }
 
