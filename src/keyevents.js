@@ -3,17 +3,30 @@
 // スタートボタンの仕様
 $('#Startbutton').click(function(){ init(); })
 
+function cnt(){
+  console.log(count);
+  count -= 1;
+  if(count == 0){ clearInterval(dotAnim); }
+}
+
 // Enterキーの仕様
 $(window).keydown(function(e){
   if(e.keyCode == K_ENTER){
     if(state == TITLE){ init(); }
     if(state == WAIT){
       // 数字入力をバリデーションで
-      // trueが返ったらstateをMOVEにしてアニメーション開始
+      // trueが返ったらstateをMOVINGにしてアニメーション開始
       // このタイミングでinputをdisableにする
       // アニメーション関連の記述はupdateに書く
       // 文字を「移動中」にして赤く点滅させたい
       // 移動が終わったら「移動完了(黒)」ってやりたい
+      if(!(inputElem())){ return; }
+      $('#state').css("color", "red");
+      $('#state').text("移動中");
+      count = 20;
+      dotAnim = setInterval(cnt, 500);
+      // state = MOVING; // 最後
+      // dotAnimation();
     }
     if(state == FINISHED){
       // 最終的にはstateをWAITにする
