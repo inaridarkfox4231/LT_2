@@ -13,8 +13,8 @@ var dots = new Array();
 var elem = [1, 0, 0, 1];
 
 // intervalはタイマーを使えるらしい。格納する変数を用意。
-var dotAnim;
-var count = 0; // 後で消す
+var count = 0; // 呼び出し回数制御用
+var timer;
 
 // State変数
 const TITLE = 0;    // タイトル、ここでEnterするとWAIT.
