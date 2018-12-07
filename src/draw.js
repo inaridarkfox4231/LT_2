@@ -1,9 +1,8 @@
 // 描画関連
 
-function drawTest(){
+function drawInit(){
   var ctx = getctx();
   drawAxis(ctx);
-  // TODO: 21×21個の点を描画する
   drawDots(ctx, 1, 0, 0, 1);
 }
 
