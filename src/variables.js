@@ -33,7 +33,7 @@ var K_SHIFT = 16;
 // mode変数（0～2）
 var mode = 3;
 const NUM_OF_MODE = 4;
-var modenames = ["点移動（線型補間モード）", "点移動（円補間モード）", "格子変形モード", "おまけ"];
+var modenames = ["点移動（線型補間モード）", "点移動（円補間モード）", "格子変形モード", "セルフアイコン"];
 
 // contextの取得
 function getctx(){

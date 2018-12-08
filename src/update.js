@@ -41,14 +41,10 @@ function interPolation(count){
     if(count == 50){ tmp = 1; }
     drawLattice(ctx, 1 - tmp + tmp * a, tmp * b, tmp * c, 1 - tmp + tmp * d);
   }else if(mode == 3){
-    console.log("変形する予定");
     tmp = count / 50;
     if(count == 50){ tmp = 1; }
+    a = 1 - tmp + tmp * a, b = tmp * b, c = tmp * c, d = 1 - tmp + tmp * d;
     ctx.setTransform(a, -c, -b, d, 100 * (2 - a + b), 100 * (2 + c - d));
-    // (0, 1, -1, 0, 400, 0)できちんと変形された
-    // (0, 0.5, -0.5, 0, 300, 100)でもいい、、どゆこと
-    // (0.5, 0.5, -0.5, 0.5, 200, 0)でOK, なるほど、なるほど。
-    // (0.3, 0.7, -0.7, 0.3, 280, 100)でOK. むぅぅ・・
     // どうやら(a, b \\ c, d)による変換は「(a, -c, -b, d, 100 * (2 - a + b), 100 * (2 + c - d))」でいけるらしい！
     // 適当だなオイ。でもまぁそんなもんよね。
     ctx.drawImage(darkfox, 0, 0);
