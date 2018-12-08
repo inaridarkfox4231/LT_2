@@ -23,16 +23,22 @@ function inputElem(){
 function interPolation(count){
   // 1, 0, 0, 1とa, b, c, dの間のデータ補間
   var ctx = getctx();
-  drawAxis(ctx);
+  ctx.drawImage(blank, 0, 0);
   if(mode == 0){
     tmp = count / 50;
     if(count == 50){ tmp = 1; }
+    drawAxis(ctx);
     drawDots(ctx, 1 - tmp + tmp * elem[0], tmp * elem[1], tmp * elem[2], 1 - tmp + tmp * elem[3]);
   }else if(mode == 1){
     var cosine = Math.cos((count * 1.8) * (Math.PI / 180));
     var sine = Math.sin((count * 1.8) * (Math.PI / 180));
     if(count == 50){ cosine = 0, sine = 1;}
+    drawAxis(ctx);
     drawDots(ctx, cosine + sine * elem[0], sine * elem[1], sine * elem[2], cosine + sine * elem[3]);
+  }else if(mode == 2){
+    tmp = count / 50;
+    if(count == 50){ tmp = 1; }
+    drawLattice(ctx, 1 - tmp + tmp * elem[0], tmp * elem[1], tmp * elem[2], 1 - tmp + tmp * elem[3]);
   }
 }
 
@@ -88,5 +94,6 @@ function shiftKeyProcess(){
   if(state == WAIT){
     mode = (mode + 1) % NUM_OF_MODE;  // こうすればモードを増やしてもコードいじらなくてよくなる
     $('#mode').text(modenames[mode]);
+    drawInit();
   }
 }
