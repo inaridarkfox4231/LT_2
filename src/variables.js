@@ -9,6 +9,9 @@ var blank = new Image();
 // 各種、色付きの点。
 var dots = new Array();
 
+// セルフアイコン
+var darkfox = new Image();
+
 // 4つの成分の配列elemを作る
 var elem = [1, 0, 0, 1];
 
@@ -28,9 +31,9 @@ var K_ENTER =13;
 var K_SHIFT = 16;
 
 // mode変数（0～2）
-var mode = 0;
-const NUM_OF_MODE = 3;
-var modenames = ["点移動（線型補間モード）", "点移動（円補間モード）", "格子変形モード"];
+var mode = 3;
+const NUM_OF_MODE = 4;
+var modenames = ["点移動（線型補間モード）", "点移動（円補間モード）", "格子変形モード", "おまけ"];
 
 // contextの取得
 function getctx(){
@@ -47,4 +50,5 @@ function loading(){
     dot.src = "./images/colordot_" + i + ".png";
     dots.push(dot);
   }
+  darkfox.src = "./images/darkfox.JPG";
 }

@@ -23,22 +23,35 @@ function inputElem(){
 function interPolation(count){
   // 1, 0, 0, 1とa, b, c, dの間のデータ補間
   var ctx = getctx();
+  var a = elem[0], b = elem[1], c = elem[2], d = elem[3];
   ctx.drawImage(blank, 0, 0);
   if(mode == 0){
     tmp = count / 50;
     if(count == 50){ tmp = 1; }
     drawAxis(ctx);
-    drawDots(ctx, 1 - tmp + tmp * elem[0], tmp * elem[1], tmp * elem[2], 1 - tmp + tmp * elem[3]);
+    drawDots(ctx, 1 - tmp + tmp * a, tmp * b, tmp * c, 1 - tmp + tmp * d);
   }else if(mode == 1){
     var cosine = Math.cos((count * 1.8) * (Math.PI / 180));
     var sine = Math.sin((count * 1.8) * (Math.PI / 180));
     if(count == 50){ cosine = 0, sine = 1;}
     drawAxis(ctx);
-    drawDots(ctx, cosine + sine * elem[0], sine * elem[1], sine * elem[2], cosine + sine * elem[3]);
+    drawDots(ctx, cosine + sine * a, sine * b, sine * c, cosine + sine * d);
   }else if(mode == 2){
     tmp = count / 50;
     if(count == 50){ tmp = 1; }
-    drawLattice(ctx, 1 - tmp + tmp * elem[0], tmp * elem[1], tmp * elem[2], 1 - tmp + tmp * elem[3]);
+    drawLattice(ctx, 1 - tmp + tmp * a, tmp * b, tmp * c, 1 - tmp + tmp * d);
+  }else if(mode == 3){
+    console.log("変形する予定");
+    tmp = count / 50;
+    if(count == 50){ tmp = 1; }
+    ctx.setTransform(a, -c, -b, d, 100 * (2 - a + b), 100 * (2 + c - d));
+    // (0, 1, -1, 0, 400, 0)できちんと変形された
+    // (0, 0.5, -0.5, 0, 300, 100)でもいい、、どゆこと
+    // (0.5, 0.5, -0.5, 0.5, 200, 0)でOK, なるほど、なるほど。
+    // (0.3, 0.7, -0.7, 0.3, 280, 100)でOK. むぅぅ・・
+    // どうやら(a, b \\ c, d)による変換は「(a, -c, -b, d, 100 * (2 - a + b), 100 * (2 + c - d))」でいけるらしい！
+    // 適当だなオイ。でもまぁそんなもんよね。
+    ctx.drawImage(darkfox, 0, 0);
   }
 }
 

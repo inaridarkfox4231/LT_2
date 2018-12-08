@@ -2,12 +2,15 @@
 
 function drawInit(){
   var ctx = getctx();
+  ctx.setTransform(1, 0, 0, 1, 0, 0); // Transformのリセット
   ctx.drawImage(blank, 0, 0);
   if(mode == 0 || mode == 1){
     drawAxis(ctx);
     drawDots(ctx, 1, 0, 0, 1);
   }else if(mode == 2){
     drawLattice(ctx, 1, 0, 0, 1);
+  }else if(mode == 3){
+    ctx.drawImage(darkfox, 100, 100);
   }
 }
 
