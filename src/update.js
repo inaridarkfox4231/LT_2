@@ -60,7 +60,11 @@ function dotAnim(){
      clearInterval(timer);
      count = 0;
      $('#state').css("color", "black");
-     $('#state').text("移動完了")
+     if(mode == 0 || mode == 1){
+       $('#state').text("移動完了");
+     }else{
+       $('#state').text("変形完了");
+     }
      state = FINISHED;
    }
 }
@@ -75,7 +79,11 @@ function dotAnim(){
 function startMove(){
   if(!(inputElem())){ return; }
   $('#state').css("color", "red");
-  $('#state').text("移動中");
+  if(mode == 0 || mode == 1){
+    $('#state').text("移動中");
+  }else{
+    $('#state').text("変形中");
+  }
   $('.element').prop("disabled", true);
   timer = setInterval(dotAnim, 100);
   state = MOVING;
