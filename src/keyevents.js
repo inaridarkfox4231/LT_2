@@ -7,7 +7,8 @@ $('#Enterbutton').click(function(){ enterKeyProcess(); })
 // シフトキーの仕様
 $('#Shiftbutton').click(function(){ shiftKeyProcess(); })
 
-$(window).keydown(function(e){
+// キー操作（重複を避けるためkeyupに変更）
+$(window).keyup(function(e){
   if(e.keyCode == K_ENTER){ enterKeyProcess(); } // エンターキー
   if(e.keyCode == K_SHIFT){ shiftKeyProcess(); } // シフトキー
 })

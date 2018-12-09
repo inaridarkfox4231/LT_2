@@ -7,6 +7,7 @@ function init(){
   $('#explain').hide();
   $('#mode').show();
   $('.config').show();
+  $('#elem00').focus(); // 左上マスにフォーカス
   state = WAIT;
 }
 
@@ -40,14 +41,15 @@ function interPolation(count){
     tmp = count / 50;
     if(count == 50){ tmp = 1; }
     drawLattice(ctx, 1 - tmp + tmp * a, tmp * b, tmp * c, 1 - tmp + tmp * d);
-  }else if(mode == 3){
+  }else if(mode == 3 || mode == 4){
     tmp = count / 50;
     if(count == 50){ tmp = 1; }
     a = 1 - tmp + tmp * a, b = tmp * b, c = tmp * c, d = 1 - tmp + tmp * d;
     ctx.setTransform(a, -c, -b, d, 100 * (2 - a + b), 100 * (2 + c - d));
     // どうやら(a, b \\ c, d)による変換は「(a, -c, -b, d, 100 * (2 - a + b), 100 * (2 + c - d))」でいけるらしい！
     // 適当だなオイ。でもまぁそんなもんよね。
-    ctx.drawImage(darkfox, 0, 0);
+    if(mode == 3){ ctx.drawImage(darkfox, 0, 0); }
+    else{ ctx.drawImage(circle, 0, 0); }
   }
 }
 
@@ -99,12 +101,13 @@ function initState(){
   $('.element').prop("disabled", false);
   drawInit();
   state = WAIT;
+  $('#elem00').focus(); // 左上マスにフォーカス
 }
 
 function enterKeyProcess(){
   if(state == TITLE){ init(); }
-  if(state == WAIT){ startMove(); }
-  if(state == FINISHED){ initState(); }
+  else if(state == WAIT){ startMove(); }
+  else if(state == FINISHED){ initState(); }
 }
 
 function shiftKeyProcess(){

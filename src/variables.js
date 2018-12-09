@@ -12,6 +12,9 @@ var dots = new Array();
 // セルフアイコン
 var darkfox = new Image();
 
+// 円
+var circle = new Image();
+
 // 4つの成分の配列elemを作る
 var elem = [1, 0, 0, 1];
 
@@ -30,10 +33,10 @@ var state = TITLE;  // タイトルからスタート
 var K_ENTER =13;
 var K_SHIFT = 16;
 
-// mode変数（0～2）
+// mode変数（0～4）
 var mode = 0;
-const NUM_OF_MODE = 4;
-var modenames = ["点移動（線型補間モード）", "点移動（円補間モード）", "格子変形モード", "セルフアイコン"];
+const NUM_OF_MODE = 5;
+var modenames = ["点移動（線型補間モード）", "点移動（円補間モード）", "格子変形モード", "セルフアイコン", "円"];
 
 // contextの取得
 function getctx(){
@@ -51,4 +54,5 @@ function loading(){
     dots.push(dot);
   }
   darkfox.src = "./images/darkfox.JPG";
+  circle.src = "./images/circle.png";
 }

@@ -11,6 +11,8 @@ function drawInit(){
     drawLattice(ctx, 1, 0, 0, 1);
   }else if(mode == 3){
     ctx.drawImage(darkfox, 100, 100);
+  }else if(mode == 4){
+    ctx.drawImage(circle, 100, 100);
   }
 }
 
