@@ -71,3 +71,7 @@ button:hover{
 #state{
   color: blue; /* 移動しているときは赤で点滅、移動が終わったら黒にし、Enterで再び青に戻す。 */
 }
+
+.link{
+  text-align: center;
+}
